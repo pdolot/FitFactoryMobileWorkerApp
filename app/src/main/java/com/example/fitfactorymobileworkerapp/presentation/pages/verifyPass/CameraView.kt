@@ -62,15 +62,14 @@ class CameraView : BaseFragment() {
         })
 
         viewModel.result.observe(viewLifecycleOwner, Observer {
-            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+            findNavController().popBackStack()
         })
     }
 
     private fun startCamera() {
         cameraView.facing = Facing.BACK
-        cameraView.setLifecycleOwner(viewLifecycleOwner)
         cameraView.addFrameProcessor(viewModel)
-
+        cameraView.setLifecycleOwner(viewLifecycleOwner)
     }
 
     private fun animateMeshToTop() {

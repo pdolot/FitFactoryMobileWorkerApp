@@ -58,7 +58,7 @@
         android:id="@+id/frameView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="@dimen/big_margin"
+        android:layout_margin="64dp"
         app:layout_constraintDimensionRatio="H, 1:1"
         app:strokeWidth="4dp"
         app:color="@color/silverLight"
@@ -67,7 +67,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/shadow"
+        android:tint="@color/primaryBgColor2"
+        android:rotation="180"
+        app:layout_constraintBottom_toTopOf="@id/frameView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/shadow"
+        android:tint="@color/primaryBgColor2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frameView"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
