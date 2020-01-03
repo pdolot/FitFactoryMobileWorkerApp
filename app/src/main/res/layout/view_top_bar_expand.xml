@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primaryBgColor"
+    android:paddingEnd="@dimen/medium_margin"
+    android:paddingBottom="@dimen/medium_margin">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/user_image"
+        app:layout_behavior=".presentation.behaviours.CircleImageViewBehaviour"
+        app:civ_border_color="@color/primaryLight"
+        app:civ_border_width="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userFirstNameLastName"
+        android:text="Jan Kowalski"
+        style="@style/FontH2_BOLD"
+        android:alpha="1.0"
+        android:textColor="@color/silverLight"
+        android:textAlignment="textStart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:paddingStart="4dp"
+        android:maxLines="2"
+        app:layout_constraintTop_toTopOf="@id/profileImage"
+        app:layout_constraintStart_toEndOf="@id/profileImage"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/userDetails"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/userFirstNameLastName"
+        app:layout_constraintTop_toBottomOf="@id/userFirstNameLastName"
+        app:layout_constraintBottom_toBottomOf="@id/profileImage"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/locationIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/location"
+            android:tint="@color/primaryLight"
+            app:layout_constraintVertical_chainStyle="spread"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/userRole"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/userWorkPlace"
+            android:text="FitFactory 2"
+            style="@style/FontH5_LIGHT"
+            android:alpha="1.0"
+            android:textColor="@color/silverLight"
+            android:textAlignment="textStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:maxLines="1"
+            app:layout_constraintTop_toTopOf="@id/locationIcon"
+            app:layout_constraintStart_toEndOf="@id/locationIcon"
+            app:layout_constraintBottom_toBottomOf="@id/locationIcon"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/userRole"
+            android:text="konsultant / trener"
+            style="@style/FontH5_LIGHT"
+            android:alpha="1.0"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:textColor="@color/silverLight"
+            android:textAlignment="textStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dp"
+            android:maxLines="1"
+            app:layout_constraintTop_toBottomOf="@id/locationIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

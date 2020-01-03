@@ -1,0 +1,181 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryMedium</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/secondaryMedium</item>
+        <item name="android:statusBarColor">@color/primaryBgColor</item>
+        <item name="android:navigationBarColor">@color/primaryBgColor2</item>
+<!--        <item name="md_font_title">@font/fira_sans_condensed_extra_bold</item>-->
+<!--        <item name="md_font_body">@font/fira_sans_condensed_medium</item>-->
+<!--        <item name="md_font_button">@font/fira_sans_condensed_bold</item>-->
+<!--        <item name="md_corner_radius">@dimen/corner_radius</item>-->
+<!--        <item name="md_background_color">@color/primaryBgColor2</item>-->
+<!--        <item name="md_color_title">@color/primaryLight</item>-->
+<!--        <item name="md_color_content">@color/silverMedium</item>-->
+<!--        <item name="md_color_button_text">@color/secondaryMedium</item>-->
+    </style>
+
+
+    <style name="FontH1_BOLD">
+        <item name="android:fontFamily">@font/fira_sans_condensed_bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="FontH2_BOLD">
+        <item name="android:textColor">@color/silverMedium</item>
+        <item name="android:fontFamily">@font/fira_sans_condensed_bold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="FontH3_BOLD">
+        <item name="android:textColor">@color/silverMedium</item>
+        <item name="android:fontFamily">@font/fira_sans_condensed_bold</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="FontH3_LIGHT">
+        <item name="android:textColor">@color/silverMedium</item>
+        <item name="android:fontFamily">@font/fira_sans_condensed_light</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="FontH4_LIGHT">
+        <item name="android:textColor">@color/silverMedium</item>
+        <item name="android:fontFamily">@font/fira_sans_condensed_light</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="FontH4_MEDIUM">
+        <item name="android:textColor">@color/silverMedium</item>
+        <item name="android:fontFamily">@font/fira_sans_condensed_medium</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="FontH5_MEDIUM">
+        <item name="android:textColorHighlight">#00FFFFFF</item>
+        <item name="android:textColor">@color/silverLight</item>
+        <item name="android:fontFamily">@font/fira_sans_condensed_medium</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="FontH5_LIGHT">
+        <item name="android:textColorHighlight">#00FFFFFF</item>
+        <item name="android:textColor">@color/silverLight</item>
+        <item name="android:fontFamily">@font/fira_sans_condensed_light</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="FontH6_MEDIUM">
+        <item name="android:textColorHighlight">#00FFFFFF</item>
+        <item name="android:textColor">@color/silverLight</item>
+        <item name="android:fontFamily">@font/fira_sans_condensed_medium</item>
+        <!--        <item name="android:textSize">15sp</item>-->
+    </style>
+
+    <style name="FontH6_LIGHT">
+        <item name="android:textColorHighlight">#00FFFFFF</item>
+        <item name="android:textColor">@color/silverLight</item>
+        <item name="android:fontFamily">@font/fira_sans_condensed_light</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="FontH7_LIGHT">
+        <item name="android:textColorHighlight">#00FFFFFF</item>
+        <item name="android:textColor">@color/silverLight</item>
+        <item name="android:fontFamily">@font/fira_sans_condensed_light</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+
+    <style name="HeaderTextView">
+        <item name="android:textColor">@color/silverLight</item>
+        <item name="android:fontFamily">@font/fira_sans_condensed_bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="MenuItemTextView">
+        <item name="android:textColor">@color/silverLight</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ButtonLabel">
+        <item name="android:textColor">@color/secondaryVeryDark</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+<!--        <item name="android:background">@drawable/buy_button</item>-->
+    </style>
+
+    <style name="ButtonPositiveLabel">
+        <item name="android:textColor">@color/positiveLight</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ItemLabelTextView">
+        <item name="android:textColor">@color/primaryMedium</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="ItemValueTextView">
+        <item name="android:textColor">@color/silverLight</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
+
+    <style name="FancyEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:colorControlActivated">@color/primaryMedium</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:importantForAutofill" tools:targetApi="o">no</item>
+    </style>
+
+    <style name="HelperText">
+        <item name="android:textColor">@color/primaryBgColor4</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextInputLayoutAppearance" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <!-- reference our hint & error styles -->
+        <item name="android:fontFamily">@font/fira_sans_condensed_medium</item>
+        <item name="android:textColor">@color/primaryMedium</item>
+        <item name="android:textColorHint">@color/black20</item>
+<!--        <item name="android:textColorPrimary">@drawable/input_text_color_selector</item>-->
+        <item name="colorControlNormal">@color/primaryBgColor4</item>
+        <item name="colorControlActivated">@color/black40</item>
+        <item name="android:importantForAutofill" tools:targetApi="o">no</item>
+    </style>
+
+    <style name="FancyEditText_Text">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/primaryLight</item>
+        <item name="android:fontFamily">@font/fira_sans_condensed_medium</item>
+        <item name="color">@color/primaryLight</item>
+        <item name="hintColor">@color/primaryBgColor4</item>
+        <item name="iconColor">@color/primaryBgColor2</item>
+        <item name="outlineColor">@color/primaryBgColor4</item>
+        <item name="backgroundColor">@color/primaryBgColor</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="BottomSheet" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:colorBackground">@color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="backgroundColor" format="color" />
+    <attr name="color" format="color" />
+    <attr name="iconColor" format="color" />
+    <attr name="strokeWidth" format="dimension"/>
+
+    <declare-styleable name="CircleProgressBar">
+        <attr name="backgroundColor"/>
+        <attr name="color" />
+        <attr name="pieceCount" format="integer"/>
+        <attr name="spacePercent" format="integer"/>
+        <attr name="strokeWidth"/>
+        <attr name="progress" format="float"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="RoundedAnimatedView">
+        <attr name="backgroundColor"/>
+        <attr name="maxRadius" format="dimension" />
+        <attr name="minRadius" format="dimension" />
+        <attr name="shadowRadius" format="dimension" />
+        <attr name="shadowDx" format="dimension" />
+        <attr name="shadowDy" format="dimension" />
+        <attr name="shadowColor" format="color" />
+        <attr name="roundedCorners" format="flags">
+            <flag name="topLeft" value="1"/>
+            <flag name="topRight" value="2"/>
+            <flag name="bottomRight" value="4"/>
+            <flag name="bottomLeft" value="8"/>
+            <flag name="all" value="15"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="FancyEditText">
+        <attr name="hintColor" format="color"/>
+        <attr name="iconColor"/>
+        <attr name="outlineColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="MyTabLayout">
+        <attr name="backgroundColor"/>
+        <attr name="indicatorRadius" format="dimension"/>
+        <attr name="indicatorColor" format="color"/>
+        <attr name="activeIndicatorColor" format="color"/>
+        <attr name="itemCount" format="integer"/>
+        <attr name="tabTitle" format="string"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="leftIconDrawable" format="reference"/>
+        <attr name="rightIconDrawable" format="reference"/>
+        <attr name="iconColor"/>
+        <attr name="iconPadding" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="FrameView">
+        <attr name="color"/>
+        <attr name="strokeWidth"/>
+    </declare-styleable>
+
+    <declare-styleable name="MeshView">
+        <attr name="color"/>
+        <attr name="strokeWidth"/>
+        <attr name="rows" format="integer"/>
+        <attr name="cols" format="integer"/>
+    </declare-styleable>
+
+</resources>

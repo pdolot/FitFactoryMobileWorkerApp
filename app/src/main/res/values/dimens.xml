@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="big_margin">32dp</dimen>
+    <dimen name="medium_margin">16dp</dimen>
+    <dimen name="profileImageStartMargin">16dp</dimen>
+    <dimen name="profileImageEndMargin">12dp</dimen>
+    <dimen name="top_bar_height">64dp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="expand_top_bar_height">152dp</dimen>
+</resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:background="@color/primaryBgColor">
+
+    <com.otaliastudios.cameraview.CameraView
+        android:id="@+id/cameraView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:keepScreenOn="true"
+        app:cameraAudio="off"
+        app:cameraPlaySounds="false"
+        app:cameraGestureTap="autoFocus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/frameView"
+        app:layout_constraintEnd_toEndOf="@id/frameView"
+        app:layout_constraintStart_toStartOf="@id/frameView"
+        app:layout_constraintBottom_toBottomOf="@id/frameView">
+
+
+        <com.example.fitfactorymobileworkerapp.presentation.customViews.MeshView
+            android:visibility="invisible"
+            tools:visibility="visible"
+            android:id="@+id/scannerMesh"
+            android:layout_margin="4dp"
+            android:alpha="0.8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:strokeWidth="1dp"
+            android:rotation="360"
+            app:rows="20"
+            app:cols="40"
+            app:color="@color/primaryVeryLight"
+            app:layout_constraintDimensionRatio="2:1"
+            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <com.example.fitfactorymobileworkerapp.presentation.customViews.FrameView
+        android:id="@+id/frameView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/big_margin"
+        app:layout_constraintDimensionRatio="H, 1:1"
+        app:strokeWidth="4dp"
+        app:color="@color/silverLight"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

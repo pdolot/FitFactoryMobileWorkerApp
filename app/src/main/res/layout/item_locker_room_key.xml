@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.example.fitfactorymobileworkerapp.presentation.customViews.RoundedAnimatedView
+        android:id="@+id/roundedBackground"
+        android:layout_margin="4dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="8dp"
+        app:shadowRadius="6dp"
+        app:shadowColor="@color/primaryBgColor"
+        app:maxRadius="@dimen/medium_margin"
+        app:roundedCorners="all"
+        app:backgroundColor="@color/primaryBgColor3"/>
+    <TextView
+        android:id="@+id/keyNumber"
+        android:layout_width="0dp"
+        style="@style/FontH2_BOLD"
+        android:textColor="@color/transparentDark50"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/roundedBackground"
+        app:layout_constraintStart_toStartOf="@id/roundedBackground"
+        app:layout_constraintBottom_toBottomOf="@id/roundedBackground"
+        app:layout_constraintTop_toTopOf="@id/roundedBackground"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:layout_margin="@dimen/medium_margin"
+        tools:text="1"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

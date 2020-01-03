@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "158519603018",
+    "firebase_url": "https://fitfactorymobileworkerapp.firebaseio.com",
+    "project_id": "fitfactorymobileworkerapp",
+    "storage_bucket": "fitfactorymobileworkerapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158519603018:android:9706f182653e0764349bb3",
+        "android_client_info": {
+          "package_name": "com.example.fitfactorymobileworkerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "158519603018-icolgb63dn874avj5sbut4rh81k6pf4g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fitfactorymobileworkerapp",
+            "certificate_hash": "f4f90fb998e42ccb6518718d1cd42d08fdbd989c"
+          }
+        },
+        {
+          "client_id": "158519603018-24ib5ima29po8f8cdpt5n10noonu12k6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABP2NUt-AX5ihavJKcpX6yNz5msEsrtEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158519603018-24ib5ima29po8f8cdpt5n10noonu12k6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
