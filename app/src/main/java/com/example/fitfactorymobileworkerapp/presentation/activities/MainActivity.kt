@@ -3,6 +3,7 @@ package com.example.fitfactorymobileworkerapp.presentation.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.fitfactorymobileworkerapp.R
+import com.example.fitfactorymobileworkerapp.app.App
 import com.google.android.material.appbar.AppBarLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.math.abs
@@ -13,6 +14,8 @@ class MainActivity : AppCompatActivity(), AppBarLayout.OnOffsetChangedListener, 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        (application as App).setCurrentActivity(this)
 
         appBarLayout.addOnOffsetChangedListener(this)
     }
