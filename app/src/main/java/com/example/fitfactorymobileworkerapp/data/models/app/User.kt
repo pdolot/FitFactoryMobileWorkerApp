@@ -24,5 +24,7 @@ data class User(
 
     var profileImage: String? = null,
 
-    var roles: List<String>? = null
+    var roles: List<String>? = null,
+
+    var workPlace: WorkPlace? = null
 )

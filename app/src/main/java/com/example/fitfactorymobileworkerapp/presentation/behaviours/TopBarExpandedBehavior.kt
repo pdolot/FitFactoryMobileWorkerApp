@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import com.example.fitfactorymobileworkerapp.R
 import com.example.fitfactorymobileworkerapp.presentation.customViews.BottomBar
 import com.example.fitfactorymobileworkerapp.presentation.customViews.TopBarExpanded
 
@@ -11,7 +12,7 @@ class TopBarExpandedBehavior(context: Context?, attrs: AttributeSet?) :
     CoordinatorLayout.Behavior<TopBarExpanded>(context, attrs) {
 
     private var isInitialized = false
-    private var startY = 0f
+    private var startY = context?.resources?.getDimensionPixelSize(R.dimen.expand_top_bar_height) ?: 1
 
     override fun layoutDependsOn(
         parent: CoordinatorLayout,
@@ -27,9 +28,6 @@ class TopBarExpandedBehavior(context: Context?, attrs: AttributeSet?) :
         dependency: View
     ): Boolean {
 
-        if (!isInitialized) {
-            init(dependency)
-        }
         val currentScale = dependency.y / startY
 
         child.scaleProfileImage(currentScale)
@@ -41,8 +39,4 @@ class TopBarExpandedBehavior(context: Context?, attrs: AttributeSet?) :
         return true
     }
 
-    private fun init(dependency: View) {
-        startY = dependency.y
-        isInitialized = true
-    }
 }

@@ -13,7 +13,6 @@
         <attr name="spacePercent" format="integer"/>
         <attr name="strokeWidth"/>
         <attr name="progress" format="float"/>
-
     </declare-styleable>
 
     <declare-styleable name="RoundedAnimatedView">
@@ -34,9 +33,13 @@
     </declare-styleable>
 
     <declare-styleable name="FancyEditText">
+        <attr name="backgroundColor"/>
+        <attr name="color"/>
         <attr name="hintColor" format="color"/>
         <attr name="iconColor"/>
         <attr name="outlineColor" format="color"/>
+        <attr name="drawBar" format="boolean"/>
+        <attr name="iconLeft" format="reference"/>
     </declare-styleable>
 
     <declare-styleable name="MyTabLayout">
@@ -65,4 +68,14 @@
         <attr name="cols" format="integer"/>
     </declare-styleable>
 
+    <declare-styleable name="ProgressButton">
+        <attr name="tint" format="color"/>
+        <attr name="positiveTint" format="color"/>
+        <attr name="negativeTint" format="color"/>
+        <attr name="text" format="string"/>
+        <attr name="secondAnimType" format="enum">
+            <enum name="none" value="0"/>
+            <enum name="send" value="1"/>
+        </attr>
+    </declare-styleable>
 </resources>

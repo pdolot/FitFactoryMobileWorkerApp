@@ -16,16 +16,16 @@ class BottomBar @JvmOverloads constructor(
 
     init {
         View.inflate(context, R.layout.view_bottombar, this)
-        bindData()
     }
 
     fun changeBackgroundRadius(scale: Float){
         roundedBackground.scale = scale
     }
 
-    fun bindData(){
-//        progressBar.progress = (it.currentNumberOfMen.toFloat() + it.currentNumberOfWomen.toFloat()) / (it.menLockerRoomLimit.toFloat() + it.womenLockerRoomLimit.toFloat())
-        progressBar.progress = 0.4f
+    fun bindData(menCurr: Int, menLimit: Int, womenCurr: Int, womenLimit: Int){
+        women.text = "kobiet: $womenCurr/$womenLimit"
+        men.text = "mężczyzn: $menCurr/$menLimit"
+        progressBar.progress = (menCurr + womenCurr).toFloat() / (menLimit + womenLimit).toFloat()
         icon.drawable.setTint(progressBar.color)
     }
 

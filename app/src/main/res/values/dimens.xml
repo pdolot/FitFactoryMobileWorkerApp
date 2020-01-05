@@ -7,4 +7,7 @@
     <dimen name="top_bar_height">64dp</dimen>
     <dimen name="small_margin">8dp</dimen>
     <dimen name="expand_top_bar_height">152dp</dimen>
+    <dimen name="maxImageSize">120dp</dimen>
+    <dimen name="minImageSize">40dp</dimen>
+    <dimen name="appBarLayoutHeight">216dp</dimen>
 </resources>

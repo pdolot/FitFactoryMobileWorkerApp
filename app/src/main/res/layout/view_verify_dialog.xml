@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/medium_margin"
+            tools:background="@color/primaryBgColor">
+
+            <ImageView
+                android:id="@+id/statusIcon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginEnd="64dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/pass_non_active" />
+
+
+            <TextView
+                android:id="@+id/userLabel"
+                style="@style/FontH6_MEDIUM"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:text="Użytkownik karnetu"
+                android:textColor="@color/primaryLight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/statusIcon" />
+
+            <TextView
+                android:id="@+id/user"
+                style="@style/FontH5_MEDIUM"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userLabel"
+                tools:text="Jan Kowalski" />
+
+            <TextView
+                android:id="@+id/identityNumberLabel"
+                style="@style/FontH6_MEDIUM"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:text="Numer PESEL"
+                android:textColor="@color/primaryLight"
+                app:layout_constraintEnd_toEndOf="@id/guide50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/user" />
+
+            <TextView
+                android:id="@+id/identityNumber"
+                style="@style/FontH5_MEDIUM"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@id/guide50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/identityNumberLabel"
+                tools:text="12345678912" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/birthDateLabel"
+                style="@style/FontH6_MEDIUM"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:text="Data urodzenia"
+                android:textColor="@color/primaryLight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guide50"
+                app:layout_constraintTop_toBottomOf="@id/user" />
+
+            <TextView
+                android:id="@+id/birthDate"
+                style="@style/FontH5_MEDIUM"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guide50"
+                app:layout_constraintTop_toBottomOf="@id/birthDateLabel"
+                tools:text="09/12/2019" />
+
+            <TextView
+                tools:visibility="gone"
+                android:id="@+id/verify"
+                style="@style/ButtonLabel"
+                android:background="@drawable/action_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/big_margin"
+                android:paddingEnd="@dimen/big_margin"
+                android:paddingTop="@dimen/small_margin"
+                android:paddingBottom="@dimen/small_margin"
+                android:enabled="false"
+                android:textColor="@color/transparentDark50"
+                android:fontFamily="@font/fira_sans_condensed_medium"
+                android:text="WERYFIKUJ"
+                android:textAllCaps="true"
+                android:textAlignment="center"
+                android:layout_marginBottom="@dimen/medium_margin"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                app:layout_constraintTop_toBottomOf="@id/identityNumber"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                tools:visibility="gone"
+                android:id="@+id/giveKey"
+                style="@style/ButtonLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/big_margin"
+                android:paddingEnd="@dimen/big_margin"
+                android:paddingTop="@dimen/small_margin"
+                android:paddingBottom="@dimen/small_margin"
+                android:enabled="true"
+                android:textColor="@color/transparentDark50"
+                android:text="WYDAJ KLUCZ"
+                android:fontFamily="@font/fira_sans_condensed_medium"
+                android:textAllCaps="true"
+                android:textAlignment="center"
+                android:layout_marginBottom="@dimen/medium_margin"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                app:layout_constraintTop_toBottomOf="@id/verify"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/close"
+                style="@style/ButtonLabel"
+                android:background="@drawable/negative_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/big_margin"
+                android:paddingEnd="@dimen/big_margin"
+                android:paddingTop="@dimen/small_margin"
+                android:paddingBottom="@dimen/small_margin"
+                android:enabled="true"
+                android:textColor="@color/transparentDark50"
+                android:fontFamily="@font/fira_sans_condensed_medium"
+                android:text="ZAMKNIJ"
+                android:textAllCaps="true"
+                android:textAlignment="center"
+                android:layout_marginBottom="@dimen/medium_margin"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:layout_marginEnd="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/big_margin"
+                app:layout_constraintTop_toBottomOf="@id/giveKey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

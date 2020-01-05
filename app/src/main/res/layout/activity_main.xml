@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryBgColor2"
-    tools:context=".presentation.activities.MainActivity">
+    tools:context=".presentation.activities.MainActivity"
+    android:id="@+id/coordinator">
 
     <com.google.android.material.appbar.AppBarLayout
+        app:expanded="true"
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/appBarLayoutHeight"
         android:background="@color/transparent"
         android:elevation="4dp">
 
@@ -28,34 +30,32 @@
             app:layout_scrollFlags="noScroll" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <fragment
-        android:id="@+id/nav_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_graph" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph" />
+    </FrameLayout>
 
-<!--    <androidx.core.widget.NestedScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:overScrollMode="never"-->
-<!--        app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
-
-<!--        -->
-<!--    </androidx.core.widget.NestedScrollView>-->
 
     <com.example.fitfactorymobileworkerapp.presentation.customViews.BottomBar
-        android:id="@+id/topBar"
+        android:id="@+id/bottomBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/top_bar_height"
         android:layout_gravity="bottom"
         app:layout_anchor="@id/appBar_top"/>
 
     <com.example.fitfactorymobileworkerapp.presentation.customViews.TopBarExpanded
+        android:id="@+id/topBar"
+        app:layout_behavior=".presentation.behaviours.TopBarExpandedBehavior"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior=".presentation.behaviours.TopBarExpandedBehavior"/>
+        android:layout_height="match_parent"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

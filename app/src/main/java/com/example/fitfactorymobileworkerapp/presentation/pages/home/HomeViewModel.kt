@@ -8,12 +8,14 @@ class HomeViewModel : ViewModel() {
 
     fun getMenuItems(): List<MenuItem> {
 
-        val verify = MenuItem(title = "WERYFIKUJ", icon = R.drawable.ic_user, destinationId = R.id.cameraView)
+        val fitnessLessons = MenuItem(title = "ZAJĘCIA FITNESS", icon = R.drawable.ic_fitness_lesson, destinationId = R.id.cameraView)
+        val verify = MenuItem(title = "WERYFIKUJ", icon = R.drawable.ic_qr, destinationId = R.id.cameraView)
         val lockerRoom =
-            MenuItem(title = "SZATNIA", icon = R.drawable.ic_user, destinationId = R.id.lockerRoom)
-        val logout = MenuItem(title = "WYLOGUJ", icon = R.drawable.ic_user)
+            MenuItem(title = "SZATNIA", icon = R.drawable.ic_locker_room, destinationId = R.id.lockerRoom)
+        val logout = MenuItem(title = "WYLOGUJ", icon = R.drawable.ic_arrow_left, destinationId = R.id.toSignIn)
 
         return listOf(
+            fitnessLessons,
             verify,
             lockerRoom,
             logout

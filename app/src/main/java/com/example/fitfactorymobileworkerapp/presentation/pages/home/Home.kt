@@ -11,6 +11,7 @@ import com.example.fitfactorymobileworkerapp.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class Home : BaseFragment() {
+    override var topBarEnabled = true
 
     private val viewModel by lazy { HomeViewModel() }
     private val adapter by lazy { MenuAdapter() }
@@ -25,7 +26,7 @@ class Home : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        appBarLayout?.setExpanded(true)
+//        appBarLayout?.setExpanded(true)
 
         recyclerView.apply {
             layoutManager =  GridLayoutManager(context, 2)
@@ -35,5 +36,6 @@ class Home : BaseFragment() {
         adapter.setData(viewModel.getMenuItems())
 
     }
+
 
 }

@@ -5,7 +5,11 @@ import com.example.fitfactorymobileworkerapp.di.modules.AppModule
 import com.example.fitfactorymobileworkerapp.di.modules.DbModule
 import com.example.fitfactorymobileworkerapp.di.modules.RestModule
 import com.example.fitfactorymobileworkerapp.presentation.activities.MainActivity
+import com.example.fitfactorymobileworkerapp.presentation.activities.MainViewModel
+import com.example.fitfactorymobileworkerapp.presentation.pages.home.MenuAdapter
+import com.example.fitfactorymobileworkerapp.presentation.pages.lockerRoom.lockerRooms.LockerRoomsViewModel
 import com.example.fitfactorymobileworkerapp.presentation.pages.signIn.SignInViewModel
+import com.example.fitfactorymobileworkerapp.presentation.pages.verifyPass.CameraViewViewModel
 import dagger.Component
 import javax.inject.Singleton
 
@@ -23,6 +27,10 @@ interface AppComponent {
 
     fun inject(into: TokenInterceptor)
     fun inject(into: SignInViewModel)
+    fun inject(into: MainViewModel)
+    fun inject(into: MenuAdapter)
+    fun inject(into: LockerRoomsViewModel)
+    fun inject(into: CameraViewViewModel)
 
 
 }

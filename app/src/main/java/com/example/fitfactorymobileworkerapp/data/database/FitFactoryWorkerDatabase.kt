@@ -3,6 +3,7 @@ package com.example.fitfactorymobileworkerapp.data.database
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.example.fitfactorymobileworkerapp.data.database.lockerRoomKey.LockerRoomDao
 import com.example.fitfactorymobileworkerapp.data.models.app.LockerRoomKey
 
 @Database(
@@ -10,5 +11,5 @@ import com.example.fitfactorymobileworkerapp.data.models.app.LockerRoomKey
 )
 @TypeConverters( Converters::class)
 abstract class FitFactoryWorkerDatabase : RoomDatabase(){
-
+    abstract fun lockerRoomDao(): LockerRoomDao
 }

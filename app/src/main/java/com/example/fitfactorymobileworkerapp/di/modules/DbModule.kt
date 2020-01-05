@@ -3,6 +3,8 @@ package com.example.fitfactorymobileworkerapp.di.modules
 import androidx.room.Room
 import com.example.fitfactorymobileworkerapp.app.App
 import com.example.fitfactorymobileworkerapp.data.database.FitFactoryWorkerDatabase
+import com.example.fitfactorymobileworkerapp.data.database.lockerRoomKey.LockerRoomDao
+import com.example.fitfactorymobileworkerapp.data.database.lockerRoomKey.LockerRoomRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -19,15 +21,15 @@ class DbModule(private val application: App) {
         ).build()
     }
 
-//    @Singleton
-//    @Provides
-//    fun provideFitnessClubDao(database: FitFactoryWorkerDatabase): FitnessClubDao{
-//        return database.fitnessClubDao()
-//    }
-//
-//    @Singleton
-//    @Provides
-//    fun provideFitnessClubRepository(fitnessClubDao: FitnessClubDao): FitnessClubRepository{
-//        return FitnessClubRepository(fitnessClubDao)
-//    }
+    @Singleton
+    @Provides
+    fun provideLockerRoomDao(database: FitFactoryWorkerDatabase): LockerRoomDao{
+        return database.lockerRoomDao()
+    }
+
+    @Singleton
+    @Provides
+    fun provideLockerRoomRepository(lockerRoomDao: LockerRoomDao): LockerRoomRepository{
+        return LockerRoomRepository(lockerRoomDao)
+    }
 }

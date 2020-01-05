@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fitfactorymobileworkerapp.R
@@ -35,18 +36,27 @@ class LockerRooms : BaseFragment() {
 
         tabLayout.setupWithRecyclerView(recyclerView)
 
-        var menlist = ArrayList<LockerRoomKey>()
-        var womenlist = ArrayList<LockerRoomKey>()
-        for (i in 0..99){
-            menlist.add(LockerRoomKey(i + 1, defColor = R.color.primaryBgColor3, activeColor = R.color.primaryLight))
-            womenlist.add(LockerRoomKey(i + 1, defColor = R.color.primaryBgColor3, activeColor = R.color.pink))
-        }
-
-        adapter.menLockerRoomAdapter.setData(menlist)
-        adapter.womenLockerRoomAdapter.setData(womenlist)
-
         adapter.setData(listOf(LockerRoomItem(LockerRoomType.WOMEN), LockerRoomItem(LockerRoomType.MEN)))
+
+        viewModel.getLockerRoomByType("MALE").observe(viewLifecycleOwner, Observer {
+            adapter.menLockerRoomAdapter.setData(it)
+        })
+
+        viewModel.getLockerRoomByType("FEMALE").observe(viewLifecycleOwner, Observer {
+            adapter.womenLockerRoomAdapter.setData(it)
+        })
+
+        setListener()
 
     }
 
+    private fun setListener() {
+        adapter.womenLockerRoomAdapter.giveKeyListener = viewModel::giveKey
+        adapter.womenLockerRoomAdapter.takeKeyListener = viewModel::takeKey
+
+        adapter.menLockerRoomAdapter.giveKeyListener = viewModel::giveKey
+        adapter.menLockerRoomAdapter.takeKeyListener = viewModel::takeKey
+    }
+
+    override var topBarEnabled = true
 }

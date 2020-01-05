@@ -18,9 +18,13 @@ class LockerRoomAdapter : RecyclerView.Adapter<LockerRoomAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
+    var takeKeyListener: (Long) -> Unit = {}
+    var giveKeyListener: (Long) -> Unit = {}
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_locker_room_key, parent, false)
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_locker_room_key, parent, false)
         return ViewHolder(view)
     }
 
@@ -32,18 +36,28 @@ class LockerRoomAdapter : RecyclerView.Adapter<LockerRoomAdapter.ViewHolder>() {
         val item = items?.get(position)
         holder.itemView.apply {
             item?.let {
-                keyNumber.text = item.keyNumber.toString()
+                keyNumber.text = item.number.toString()
 
-                if (item.isActive){
-                    roundedBackground.bgColor = ContextCompat.getColor(context, item.activeColor)
-                }else{
-                    roundedBackground.bgColor = ContextCompat.getColor(context, item.defColor)
+                if (!item.free) {
+                    if (item.type == "MALE") {
+                        roundedBackground.bgColor =
+                            ContextCompat.getColor(context, R.color.primaryLight)
+                    } else {
+                        roundedBackground.bgColor = ContextCompat.getColor(context, R.color.pink)
+                    }
+
+                } else {
+                    roundedBackground.bgColor =
+                        ContextCompat.getColor(context, R.color.primaryBgColor3)
                 }
 
 
                 setOnClickListener {
-                    item.isActive = !item.isActive
-                    notifyItemChanged(position)
+                    if (!item.free){
+                        takeKeyListener(item.id)
+                    }else{
+                        giveKeyListener(item.id)
+                    }
                 }
             }
         }

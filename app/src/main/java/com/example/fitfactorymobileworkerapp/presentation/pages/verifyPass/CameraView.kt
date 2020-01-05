@@ -11,9 +11,14 @@ import androidx.core.content.ContextCompat
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.customview.customView
 import com.example.fitfactorymobileworkerapp.R
 import com.example.fitfactorymobileworkerapp.base.BaseFragment
 import com.example.fitfactorymobileworkerapp.constants.RequestCode
+import com.example.fitfactorymobileworkerapp.data.models.api.Pass
+import com.example.fitfactorymobileworkerapp.data.models.app.StateComplete
+import com.example.fitfactorymobileworkerapp.presentation.customViews.dialogs.VerifyDialog
 import com.google.android.material.appbar.AppBarLayout
 import com.otaliastudios.cameraview.controls.Audio
 import com.otaliastudios.cameraview.controls.Facing
@@ -26,6 +31,7 @@ class CameraView : BaseFragment() {
     private val viewModel by lazy { CameraViewViewModel() }
     private var scannerMeshHeight = 0f
     private var anim: ViewPropertyAnimator? = null
+    private var dialogView: VerifyDialog? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,13 +43,40 @@ class CameraView : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         appBarLayout?.setExpanded(false)
-
+        context?.let { dialogView = VerifyDialog(it) }
         if (isCameraPermissionGranted()) {
             startCamera()
         } else {
             requestPermissions(arrayOf(Manifest.permission.CAMERA), RequestCode.CAMERA_REQUEST_CODE)
         }
 
+        viewModel.result.observe(viewLifecycleOwner, Observer {
+            viewModel.checkStatus(it)
+        })
+
+        viewModel.checkStatusResult.observe(viewLifecycleOwner, Observer {
+            when(it){
+                is Pass -> {
+                    showDialog(it)
+                }
+            }
+        })
+
+        viewModel.verifyResult.observe(viewLifecycleOwner, Observer {
+            when(it){
+                is StateComplete -> dialogView?.setStateVerified()
+            }
+        })
+
+        viewModel.addEntryResult.observe(viewLifecycleOwner, Observer {
+            when(it){
+                is StateComplete -> findNavController().navigate(CameraViewDirections.toLockerRoom())
+            }
+        })
+    }
+
+    override fun onResume() {
+        super.onResume()
         scannerMesh.viewTreeObserver.addOnGlobalLayoutListener(object :
             ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
@@ -60,10 +93,25 @@ class CameraView : BaseFragment() {
                 )
             }
         })
+    }
 
-        viewModel.result.observe(viewLifecycleOwner, Observer {
-            findNavController().popBackStack()
-        })
+    private fun showDialog(pass: Pass) {
+        dialogView?.apply {
+            this.pass = pass
+        }
+        val dialog = MaterialDialog(activity ?: return).show {
+            customView( view = dialogView, scrollable = true)
+        }
+
+        dialogView?.onClose = {
+            dialog.dismiss()
+            viewModel.isAnalyzingEnabled = true
+        }
+        dialogView?.onVerify = viewModel::verify
+        dialogView?.onGiveKey = {
+            viewModel.addEntry(it)
+            dialog.dismiss()
+        }
     }
 
     private fun startCamera() {
@@ -119,8 +167,10 @@ class CameraView : BaseFragment() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
         anim?.cancel()
+        super.onDestroyView()
     }
+
+    override var topBarEnabled = true
 }
