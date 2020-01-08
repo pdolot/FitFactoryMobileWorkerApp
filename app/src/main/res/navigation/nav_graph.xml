@@ -46,4 +46,24 @@
         app:popUpTo="@id/nav_graph"
         app:popUpToInclusive="true" />
 
+    <fragment
+        android:id="@+id/fitnessLessonsPage"
+        android:name="com.example.fitfactorymobileworkerapp.presentation.pages.fitnessLesson.FitnessLessonsPage"
+        android:label="fragment_fitness_lesson"
+        tools:layout="@layout/fragment_fitness_lesson" >
+        <action
+            android:id="@+id/toFitnessLessonPage"
+            app:destination="@id/fitnessLessonPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/fitnessLessonPage"
+        android:name="com.example.fitfactorymobileworkerapp.presentation.pages.fitnessLesson.singleLesson.FitnessLessonPage"
+        android:label="fragment_fitness_lesson_page"
+        tools:layout="@layout/fragment_fitness_lesson_page" >
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="0L" />
+    </fragment>
+
 </navigation>

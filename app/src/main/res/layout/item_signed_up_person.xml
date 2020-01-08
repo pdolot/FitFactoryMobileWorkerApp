@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primaryBgColor2">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/transparent95"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/small_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/userName"
+            style="@style/FontH3_BOLD"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/small_margin"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/primaryVeryLight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Jan Kowalski" />
+
+        <TextView
+            android:id="@+id/isPaid"
+            style="@style/FontH4_MEDIUM"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/small_margin"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/userName"
+            app:layout_constraintTop_toBottomOf="@id/userName"
+            tools:text="Zapłacono: TAK" />
+
+        <CheckBox
+            android:id="@+id/wasPresentCheckbox"
+            android:layout_width="60dp"
+            android:layout_height="32dp"
+            android:button="@null"
+            android:background="@drawable/active_selector"
+            android:checked="false"
+            android:clickable="false"
+            android:text=" "
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <View
+            android:id="@+id/wasPresent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@+id/wasPresentCheckbox"
+            app:layout_constraintEnd_toEndOf="@+id/wasPresentCheckbox"
+            app:layout_constraintStart_toStartOf="@+id/wasPresentCheckbox"
+            app:layout_constraintBottom_toBottomOf="@+id/wasPresentCheckbox"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

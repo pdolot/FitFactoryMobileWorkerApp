@@ -3,9 +3,7 @@ package com.example.fitfactorymobileworkerapp.data.rest
 import com.example.fitfactorymobileworkerapp.data.models.api.BaseResponse
 import com.example.fitfactorymobileworkerapp.data.models.api.request.AddEntryRequest
 import com.example.fitfactorymobileworkerapp.data.models.api.request.SignInRequest
-import com.example.fitfactorymobileworkerapp.data.models.api.response.LockerRoomKeysResponse
-import com.example.fitfactorymobileworkerapp.data.models.api.response.PassResponse
-import com.example.fitfactorymobileworkerapp.data.models.api.response.SignInResponse
+import com.example.fitfactorymobileworkerapp.data.models.api.response.*
 import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -54,6 +52,24 @@ class RetrofitRepository @Inject constructor(private val retrofitService: Retrof
 
     fun addEntry(entry: AddEntryRequest): Single<BaseResponse>{
         return retrofitService.addEntry(entry)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+    }
+
+    fun getFitnessLessons(id: Long): Single<FitnessLessonsResponse>{
+        return retrofitService.getFitnessLessons(id)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+    }
+
+    fun getFitnessLesson(id: Long): Single<FitnessLessonResponse>{
+        return retrofitService.getFitnessLesson(id)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+    }
+
+    fun markPresence(id: Long, present: Boolean): Single<BaseResponse>{
+        return retrofitService.markPresence(id, present)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }

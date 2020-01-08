@@ -1,6 +1,7 @@
 package com.example.fitfactorymobileworkerapp.presentation.pages.lockerRoom.lockerRooms
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.fitfactorymobileworkerapp.base.BaseViewModel
 import com.example.fitfactorymobileworkerapp.data.database.lockerRoomKey.LockerRoomRepository
@@ -20,6 +21,8 @@ class LockerRoomsViewModel : BaseViewModel() {
         Injector.component.inject(this)
     }
 
+    val result = MutableLiveData<String>()
+
     fun getLockerRoomByType(type: String) = lockerRoomRepository.getByType(type)
 
     fun giveKey(id: Long) {
@@ -27,13 +30,16 @@ class LockerRoomsViewModel : BaseViewModel() {
             .subscribeBy(
                 onSuccess = {
                     if (it.status){
+                        result.postValue("Klucz został wydany")
                         Log.i("LockerRoomsViewModel", it.message)
                     }else{
+                        result.postValue("Klucz został już wydany wcześniej")
                         Log.e("LockerRoomsViewModel", it.message)
                     }
 
                 },
                 onError = {
+                    result.postValue("Błąd połączenia")
                     Log.e("LockerRoomsViewModel", it.message)
                 }
             ))
@@ -43,9 +49,17 @@ class LockerRoomsViewModel : BaseViewModel() {
         rxDisposer.add(retrofitRepository.takeLockerRoomKey(id)
             .subscribeBy(
                 onSuccess = {
-                    Log.e("LockerRoomsViewModel", it.message)
+                    if (it.status){
+                        result.postValue("Klucz został odebrany")
+                        Log.i("LockerRoomsViewModel", it.message)
+                    }else{
+                        result.postValue("Klucz został już odebrany wcześniej")
+                        Log.e("LockerRoomsViewModel", it.message)
+                    }
+
                 },
                 onError = {
+                    result.postValue("Błąd połączenia")
                     Log.e("LockerRoomsViewModel", it.message)
                 }
             ))

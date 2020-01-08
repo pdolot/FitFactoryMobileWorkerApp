@@ -3,9 +3,7 @@ package com.example.fitfactorymobileworkerapp.data.rest
 import com.example.fitfactorymobileworkerapp.data.models.api.BaseResponse
 import com.example.fitfactorymobileworkerapp.data.models.api.request.AddEntryRequest
 import com.example.fitfactorymobileworkerapp.data.models.api.request.SignInRequest
-import com.example.fitfactorymobileworkerapp.data.models.api.response.LockerRoomKeysResponse
-import com.example.fitfactorymobileworkerapp.data.models.api.response.PassResponse
-import com.example.fitfactorymobileworkerapp.data.models.api.response.SignInResponse
+import com.example.fitfactorymobileworkerapp.data.models.api.response.*
 import io.reactivex.Observable
 import io.reactivex.Single
 import retrofit2.http.Body
@@ -35,4 +33,15 @@ interface RetrofitService {
 
     @POST("/entry/add")
     fun addEntry(@Body entry: AddEntryRequest): Single<BaseResponse>
+
+    @GET("/coach/getCoachLessons")
+    fun getFitnessLessons(@Query("id") id: Long): Single<FitnessLessonsResponse>
+
+    @GET("fitnessLesson/getFitnessLesson")
+    fun getFitnessLesson(@Query("id") id: Long): Single<FitnessLessonResponse>
+
+    @POST("lessonEntry/markPresence")
+    fun markPresence(@Query("id") id:Long, @Query("present") present: Boolean): Single<BaseResponse>
+
+
 }

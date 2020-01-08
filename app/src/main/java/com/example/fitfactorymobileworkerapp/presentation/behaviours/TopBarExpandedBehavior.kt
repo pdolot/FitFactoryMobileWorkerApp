@@ -28,8 +28,10 @@ class TopBarExpandedBehavior(context: Context?, attrs: AttributeSet?) :
         dependency: View
     ): Boolean {
 
-        val currentScale = dependency.y / startY
-
+        var currentScale = dependency.y / startY
+        if (currentScale > 1.0f){
+            currentScale = 1.0f
+        }
         child.scaleProfileImage(currentScale)
         if (currentScale in 0.6f..1.0f){
             child.fadeUserDetails(currentScale)

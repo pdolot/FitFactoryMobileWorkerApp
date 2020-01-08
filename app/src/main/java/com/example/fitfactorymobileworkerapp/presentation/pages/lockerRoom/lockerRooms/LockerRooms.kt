@@ -12,6 +12,7 @@ import com.example.fitfactorymobileworkerapp.base.BaseFragment
 import com.example.fitfactorymobileworkerapp.data.models.app.LockerRoomItem
 import com.example.fitfactorymobileworkerapp.data.models.app.LockerRoomKey
 import com.example.fitfactorymobileworkerapp.data.models.app.LockerRoomType
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_locker_room.*
 
 class LockerRooms : BaseFragment() {
@@ -44,6 +45,10 @@ class LockerRooms : BaseFragment() {
 
         viewModel.getLockerRoomByType("FEMALE").observe(viewLifecycleOwner, Observer {
             adapter.womenLockerRoomAdapter.setData(it)
+        })
+
+        viewModel.result.observe(viewLifecycleOwner, Observer {
+            Snackbar.make(recyclerView, it, Snackbar.LENGTH_SHORT).show()
         })
 
         setListener()
