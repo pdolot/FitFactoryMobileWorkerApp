@@ -8,6 +8,7 @@ import com.example.fitfactorymobileworkerapp.presentation.activities.MainActivit
 import com.example.fitfactorymobileworkerapp.presentation.activities.MainViewModel
 import com.example.fitfactorymobileworkerapp.presentation.pages.fitnessLesson.FitnessLessonsViewModel
 import com.example.fitfactorymobileworkerapp.presentation.pages.fitnessLesson.singleLesson.FitnessLessonPageViewModel
+import com.example.fitfactorymobileworkerapp.presentation.pages.home.HomeViewModel
 import com.example.fitfactorymobileworkerapp.presentation.pages.home.MenuAdapter
 import com.example.fitfactorymobileworkerapp.presentation.pages.lockerRoom.lockerRooms.LockerRoomsViewModel
 import com.example.fitfactorymobileworkerapp.presentation.pages.signIn.SignInViewModel
@@ -35,6 +36,7 @@ interface AppComponent {
     fun inject(into: CameraViewViewModel)
     fun inject(into: FitnessLessonsViewModel)
     fun inject(into: FitnessLessonPageViewModel)
+    fun inject(into: HomeViewModel)
 
 
 }

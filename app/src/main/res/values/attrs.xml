@@ -78,4 +78,19 @@
             <enum name="send" value="1"/>
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="CircleProgressBars">
+        <attr name="count" format="integer"/>
+        <attr name="colors" format="reference"/>
+        <attr name="bgColors" format="reference"/>
+        <attr name="progresses" format="reference"/>
+        <attr name="spaceBetween" format="dimension"/>
+        <attr name="maxProgressAngle" format="integer"/>
+        <attr name="strokeWidth"/>
+        <attr name="strokeCap" format="enum">
+            <enum name="ROUND" value="0"/>
+            <enum name="BUTT" value="1"/>
+            <enum name="SQUARE" value="2"/>
+        </attr>
+    </declare-styleable>
 </resources>

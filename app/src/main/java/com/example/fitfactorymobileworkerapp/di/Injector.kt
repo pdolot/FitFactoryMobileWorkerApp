@@ -8,10 +8,10 @@ import com.example.fitfactorymobileworkerapp.di.modules.RestModule
 object Injector {
     lateinit var component: AppComponent
 
-    fun init(application: App) {
+    fun init(application: App, baseUrl: String) {
         component = DaggerAppComponent.builder()
             .appModule(AppModule(application))
-            .restModule(RestModule())
+            .restModule(RestModule(baseUrl))
             .dbModule(DbModule(application))
             .build()
     }

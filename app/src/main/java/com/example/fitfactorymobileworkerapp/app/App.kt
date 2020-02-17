@@ -9,7 +9,6 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        Injector.init(this)
     }
 
     fun setCurrentActivity(activity: AppCompatActivity) {

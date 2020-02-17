@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="colors">
+        <item>@color/primaryVeryLight</item>
+        <item>@color/secondaryDark</item>
+        <item>@color/primaryMedium</item>
+        <item>@color/primaryDark</item>
+    </array>
+
+    <array name="bgColors">
+        <item>@color/primaryBgColor4</item>
+        <item>@color/primaryBgColor3</item>
+        <item>@color/primaryBgColor2</item>
+        <item>@color/primaryBgColor</item>
+    </array>
+
+    <array name="progresses">
+        <item>10.5</item>
+        <item>0.2</item>
+        <item>0.1</item>
+        <item>0.8</item>
+    </array>
+</resources>

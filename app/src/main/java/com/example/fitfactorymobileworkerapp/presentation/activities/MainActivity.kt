@@ -8,9 +8,14 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.example.fitfactorymobileworkerapp.R
 import com.example.fitfactorymobileworkerapp.app.App
+import com.example.fitfactorymobileworkerapp.di.Injector
 import com.example.fitfactorymobileworkerapp.presentation.customViews.BottomBar
 import com.example.fitfactorymobileworkerapp.presentation.customViews.TopBarExpanded
 import com.google.android.material.appbar.AppBarLayout
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.math.abs
 

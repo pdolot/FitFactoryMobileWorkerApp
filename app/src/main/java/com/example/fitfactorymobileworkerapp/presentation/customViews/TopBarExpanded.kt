@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.bumptech.glide.Glide
 import com.example.fitfactorymobileworkerapp.R
 import com.example.fitfactorymobileworkerapp.data.models.app.User
 import com.example.fitfactorymobileworkerapp.utils.SpanTextUtil
@@ -65,6 +66,11 @@ class TopBarExpanded @JvmOverloads constructor(
                     )
                 }
             }
+
+            Glide.with(context)
+                .load(it.profileImage)
+                .placeholder(R.drawable.user_image)
+                .into(profileImage)
         }
     }
 }
